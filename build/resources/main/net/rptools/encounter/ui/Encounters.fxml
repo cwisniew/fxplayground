@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.glyphfont.Glyph?>
+
+<StackPane fx:id="encountersTopLevel" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.rptools.encounter.ui.encounter.EncountersController">
+   <children>
+      <BorderPane fx:id="encountersPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <left>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="400.0" styleClass="left-nav-layout" stylesheets="@EncounterToolUI.css">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="left-nav-header-label" stylesheets="@EncounterToolUI.css" text="Encounters" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                        <Label id="encounters-icon-box" layoutX="15.0" layoutY="10.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="left-nav-header-icon" stylesheets="@EncounterToolUI.css" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                        <JFXButton id="add-encounter-button" buttonType="RAISED" layoutX="253.0" layoutY="92.0" onAction="#onEncounterAdd" styleClass="circular-add-button" AnchorPane.bottomAnchor="-10.0" AnchorPane.rightAnchor="-10.0">
+                           <graphic>
+                              <Glyph id="add-encounter-glyph" fontFamily="FontAwesome" icon="PLUS" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <TableView id="encounters-table" fx:id="encounterTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <HBox id="encounter-card-container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <VBox id="encounter-card" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="card-white" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox id="encounter-card-header">
+                                 <children>
+                                    <Label id="encounter-name-text" fx:id="encounterNameLabel" text="%encounter.name" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <FlowPane alignment="TOP_CENTER">
+                                             <children>
+                                                <Label id="encounter-rating-label" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" prefHeight="25.0" prefWidth="25.0" />
+                                                <Label fx:id="challengeRatingLabel" styleClass="encounter-card-subheading" text="%encounter.rating" />
+                                             </children>
+                                          </FlowPane>
+                                          <FlowPane alignment="CENTER">
+                                             <children>
+                                                <Label id="encounter-map-label" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" prefHeight="25.0" prefWidth="25.0" />
+                                                <Label fx:id="mapLocationLabel" styleClass="encounter-card-subheading" text="%encounter.mapLocation" />
+                                             </children>
+                                          </FlowPane>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <JFXTabPane id="encounter-details-tabpane" fx:id="encounterDetailsTabpane" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

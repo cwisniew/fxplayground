@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.glyphfont.Glyph?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@EncounterToolUI.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.rptools.encounter.ui.StylesheetsController">
+   <left>
+      <VBox styleClass="left-nav-layout" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="280.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="left-nav-header-label" text="Stylesheets" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                  <Label layoutX="19.0" layoutY="-15.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="left-nav-header-icon" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                     <graphic>
+                        <Glyph id="add-encounter-glyph" fontFamily="FontAwesome" icon="CSS3" fontSize="50" />
+                     </graphic>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXListView fx:id="stylesheetListView" maxHeight="1.7976931348623157E308" styleClass="left-nav-list" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="card-white" stylesheets="@EncounterToolUI.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="stylesheet-label-text" text="Stylesheet" />
+            <AnchorPane fx:id="editorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
